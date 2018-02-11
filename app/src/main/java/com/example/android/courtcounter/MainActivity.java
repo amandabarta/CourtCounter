@@ -8,8 +8,10 @@ import android.view.View;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-
+// tracks score team a
     int scoreTeamA = 0;
+//    tracks score team b
+    int scoreTeamB = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,20 +47,48 @@ public class MainActivity extends AppCompatActivity {
         TextView scoreView = (TextView) findViewById(R.id.team_a_score);
         scoreView.setText(String.valueOf(score));
     }
+    /**
+     * Displays the given score for Team B.
+     */
+    public void displayForTeamB(int score) {
+        TextView scoreView = (TextView) findViewById(R.id.team_b_score);
+        scoreView.setText(String.valueOf(score));
+    }
 
-    // adds 3 to player's score
+    // adds 3 to Team A score
     public void plusThreeTeamA (View v) {
         scoreTeamA = scoreTeamA + 3;
         displayForTeamA(scoreTeamA);
 
     }
-    // adds 2 to player's score
+    // adds 2 to Team A score
     public void plusTwoTeamA (View v) {
-        displayForTeamA(2);
+        scoreTeamA = scoreTeamA + 2;
+        displayForTeamA(scoreTeamA);
     }
 
-    //adds 1 to player's score
+    //adds 1 to Team A score
     public void plusOneTeamA (View v) {
-        displayForTeamA(1);
+        scoreTeamA = scoreTeamA + 1;
+        displayForTeamA(scoreTeamA);
+    }
+
+
+    // adds 3 to Team B score
+    public void plusThreeTeamB (View v) {
+        scoreTeamB = scoreTeamB + 3;
+        displayForTeamB(scoreTeamB);
+
+    }
+    // adds 2 to Team B score
+    public void plusTwoTeamB (View v) {
+        scoreTeamB = scoreTeamB + 2;
+        displayForTeamB(scoreTeamB);
+    }
+
+    //adds 1 to Team B score
+    public void plusOneTeamB (View v) {
+        scoreTeamB = scoreTeamB + 1;
+        displayForTeamB(scoreTeamB);
     }
 }
